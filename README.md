@@ -1,12 +1,12 @@
-# Aether.Physics2D
+# Reign.Physics2D
 
-Aether.Physics2D is a 2D collision detection system.
+Reign.Physics2D is a 2D collision detection system.
 
-# **NEW HOME: https://github.com/nkast/Aether.Physics2D/releases**
+# **NEW HOME: https://github.com/nkast/Reign.Physics2D/releases**
 
 [![Discord](https://img.shields.io/discord/780484381961093172?style=flat)](https://discord.gg/95nPEjZ6mu)
 
-Documentation: https://tainicom.github.io/Aether.Physics2D/
+Documentation: https://tainicom.github.io/Reign.Physics2D/
 
 ![3DCameraDemo](Documentation//Images/3DCameraDemo.png)
 
@@ -30,19 +30,19 @@ Documentation: https://tainicom.github.io/Aether.Physics2D/
 
 # Downloads
 
-https://www.nuget.org/packages/Aether.Physics2D
+https://www.nuget.org/packages/Reign.Physics2D
 
-**NOTE** From v1.5 the nuget package `Aether.Physics2D` contain the standalone library 
+**NOTE** From v1.5 the nuget package `Reign.Physics2D` contain the standalone library 
 with no dependencies to 3rd party math libraries. For the monogame library (Vector2, Vector3 etc)
-and the monogame based diagnostics use `Aether.Physics2D.MG` and `Aether.Physics2D.Diagnostics.MG`.
+and the monogame based diagnostics use `Reign.Physics2D.MG` and `Reign.Physics2D.Diagnostics.MG`.
 
-https://www.nuget.org/packages/Aether.Physics2D.MG
+https://www.nuget.org/packages/Reign.Physics2D.MG
 
-https://www.nuget.org/packages/Aether.Physics2D.Diagnostics.MG
+https://www.nuget.org/packages/Reign.Physics2D.Diagnostics.MG
 
-https://www.nuget.org/packages/Aether.Physics2D.Diagnostics
+https://www.nuget.org/packages/Reign.Physics2D.Diagnostics
  
 
-https://github.com/tainicom/Aether.Physics2D/releases/tag/v1.7
+https://github.com/tainicom/Reign.Physics2D/releases/tag/v1.7
 
 ![LightAndShadowsDemo](Documentation//Images/LightAndShadowsDemo.png)
