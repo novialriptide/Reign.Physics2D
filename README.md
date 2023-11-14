@@ -1,6 +1,6 @@
 # Reign.Physics2D
 
-Just another fork of [Farseer Physics](https://github.com/Genbox/VelcroPhysics).
+Just another fork of [Farseer Physics](https://github.com/Genbox/VelcroPhysics). This forked physics engine would be used in [Reign](https://reigngame.net) and will be modified to fit its usecase. We are currently in the progress of writing testcases to keep the functionality robust and consistent throughout its releases. This package will probably not be available on nuget, only on [GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry). This will be one of the few projects that will be open-sourced that is directly related to [Reign](https://reigngame.net).
 
 ## Features
 
