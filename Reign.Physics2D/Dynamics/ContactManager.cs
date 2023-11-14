@@ -51,7 +51,7 @@ namespace Reign.Physics2D.Dynamics
         /// Typical values are {128 or 256}.
         /// </summary>
         public int PositionConstraintsMultithreadThreshold = int.MaxValue;
-        
+
         /// <summary>
         /// A threshold for activating multiple cores to solve Collide.
         /// An World with a contact count above this threshold will use multiple threads to solve Collide.
@@ -128,7 +128,7 @@ namespace Reign.Physics2D.Dynamics
         {
             FixtureProxy proxyA = BroadPhase.GetProxy(proxyIdA);
             FixtureProxy proxyB = BroadPhase.GetProxy(proxyIdB);
-            
+
             Fixture fixtureA = proxyA.Fixture;
             Fixture fixtureB = proxyB.Fixture;
 
@@ -318,7 +318,7 @@ namespace Reign.Physics2D.Dynamics
 				ActiveContacts.Remove(contact);
 #endif
             contact.Destroy();
-            
+
             // Insert into the pool.
             contact.Next = _contactPoolList.Next;
             _contactPoolList.Next = contact;

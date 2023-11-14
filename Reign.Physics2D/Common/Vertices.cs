@@ -57,7 +57,7 @@ namespace Reign.Physics2D.Common
         /// </summary>
         SideTooSmall
     }
-    
+
     [DebuggerDisplay("Count = {Count} Vertices = {ToString()}")]
     public class Vertices : List<Vector2>
     {
@@ -433,7 +433,7 @@ namespace Reign.Physics2D.Common
             {
                 int next = i + 1 < Count ? i + 1 : 0;
                 Vector2 edge = this[next] - this[i];
-                if (edge.LengthSquared() <= Settings.Epsilon*Settings.Epsilon)
+                if (edge.LengthSquared() <= Settings.Epsilon * Settings.Epsilon)
                 {
                     return PolygonError.SideTooSmall;
                 }

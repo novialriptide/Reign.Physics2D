@@ -61,7 +61,7 @@ namespace Reign.Physics2D.Dynamics.Contacts
         /// The next contact edge in the body's contact list
         /// </summary>
         public ContactEdge Next { get; internal set; }
-        
+
         /// <summary>
         /// The previous contact edge in the body's contact list
         /// </summary>
@@ -374,7 +374,7 @@ namespace Reign.Physics2D.Dynamics.Contacts
                     var onFixtureSeparationHandlerB = FixtureB.OnSeparation;
                     if (onFixtureSeparationHandlerB != null)
                         onFixtureSeparationHandlerB(FixtureB, FixtureA, this);
-                    
+
                     //Report the separation to both bodies:
                     var onBodySeparationHandlerA = bodyA.onSeparationEventHandler;
                     if (onBodySeparationHandlerA != null)
@@ -385,7 +385,7 @@ namespace Reign.Physics2D.Dynamics.Contacts
                     var onBodySeparationHandlerB = bodyB.onSeparationEventHandler;
                     if (onBodySeparationHandlerB != null)
                         onBodySeparationHandlerB(FixtureB, FixtureA, this);
-                    
+
                     var endContactHandler = contactManager.EndContact;
                     if (endContactHandler != null)
                         endContactHandler(this);
@@ -471,7 +471,7 @@ namespace Reign.Physics2D.Dynamics.Contacts
                 else
                     c.Reset(fixtureB, indexB, fixtureA, indexA);
             }
-        
+
 
             c._type = _registers[(int)type1, (int)type2];
 

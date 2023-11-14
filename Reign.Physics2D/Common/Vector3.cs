@@ -7,7 +7,7 @@ namespace Reign.Physics2D.Common
     public struct Vector3 : IEquatable<Vector3>
     {
         private static readonly Vector3 _zero = new Vector3(0, 0, 0);
-        private static readonly Vector3 _one  = new Vector3(1, 1, 1);
+        private static readonly Vector3 _one = new Vector3(1, 1, 1);
 
 
         public float X;
@@ -50,7 +50,7 @@ namespace Reign.Physics2D.Common
 
         public override int GetHashCode()
         {
-            return (X.GetHashCode() ^ Y.GetHashCode()^ Z.GetHashCode());
+            return (X.GetHashCode() ^ Y.GetHashCode() ^ Z.GetHashCode());
         }
 
         public override bool Equals(object obj)
@@ -72,7 +72,7 @@ namespace Reign.Physics2D.Common
             left.Z += right.Z;
             return left;
         }
-        
+
         public static Vector3 operator -(Vector3 left, Vector3 right)
         {
             left.X -= right.X;
@@ -112,7 +112,7 @@ namespace Reign.Physics2D.Common
             right.Z *= left;
             return right;
         }
-        
+
         public static Vector3 operator /(Vector3 left, float right)
         {
             float invRight = 1f / right;

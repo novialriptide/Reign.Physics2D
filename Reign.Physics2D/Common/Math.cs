@@ -51,8 +51,8 @@ namespace Reign.Physics2D.Common
         /// Perform the cross product on two vectors.
         public static Vector3 Cross(ref Vector3 a, ref Vector3 b)
         {
-            return new Vector3( a.Y * b.Z - a.Z * b.Y, 
-                                a.Z * b.X - a.X * b.Z, 
+            return new Vector3(a.Y * b.Z - a.Z * b.Y,
+                                a.Z * b.X - a.X * b.Z,
                                 a.X * b.Y - a.Y * b.X);
         }
 
@@ -90,7 +90,7 @@ namespace Reign.Physics2D.Common
         {
             return new Vector2(A.ex.X * v.X + A.ey.X * v.Y, A.ex.Y * v.X + A.ey.Y * v.Y);
         }
-        
+
         public static Vector2 MulT(ref Mat22 A, Vector2 v)
         {
             return MulT(ref A, ref v);
@@ -116,7 +116,7 @@ namespace Reign.Physics2D.Common
         {
             return v.X * A.ex + v.Y * A.ey + v.Z * A.ez;
         }
-        
+
         public static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
@@ -129,7 +129,7 @@ namespace Reign.Physics2D.Common
         {
             return new Vector2(A.ex.X * v.X + A.ey.X * v.Y, A.ex.Y * v.X + A.ey.Y * v.Y);
         }
-        
+
         /// Get the skew vector such that dot(skew_vec, other) == cross(vec, other)
         public static Vector2 Skew(Vector2 input)
         {
@@ -253,7 +253,7 @@ namespace Reign.Physics2D.Common
         public static void Cross(float s, ref Vector2 a, out Vector2 b)
         {
             b.X = -s * a.Y;
-            b.Y =  s * a.X;
+            b.Y = s * a.X;
         }
 
         public static bool FloatEquals(float value1, float value2)
@@ -514,7 +514,7 @@ namespace Reign.Physics2D.Common
         }
     }
 
-    
+
     /// <summary>
     /// A transform contains translation and rotation. It is used to represent
     /// the position and orientation of rigid frames.
@@ -548,7 +548,7 @@ namespace Reign.Physics2D.Common
             : this(position, Complex.FromAngle(angle))
         {
         }
-                
+
         public static Vector2 Multiply(Vector2 left, ref Transform right)
         {
             return Multiply(ref left, ref right);
@@ -599,19 +599,19 @@ namespace Reign.Physics2D.Common
                 Complex.Divide(left.p - right.p, ref right.q),
                 Complex.Divide(ref left.q, ref right.q));
         }
-        
+
         public static void Divide(ref Transform left, ref Transform right, out Transform result)
         {
             Complex.Divide(left.p - right.p, ref right.q, out result.p);
             Complex.Divide(ref left.q, ref right.q, out result.q);
         }
-            
+
         public static void Multiply(ref Transform left, Complex right, out Transform result)
         {
             result.p = Complex.Multiply(ref left.p, ref right);
             result.q = Complex.Multiply(ref left.q, ref right);
         }
-        
+
         public static void Divide(ref Transform left, Complex right, out Transform result)
         {
             result.p = Complex.Divide(ref left.p, ref right);

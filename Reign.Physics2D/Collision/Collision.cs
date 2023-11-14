@@ -1747,7 +1747,7 @@ namespace Reign.Physics2D.Collision
 
             // Vector pointing from the centroid of poly1 to the centroid of poly2.
             Vector2 c2local = Transform.Divide(poly2.MassData.Centroid, ref xf1To2);
-            Vector2 dLocal1 = c2local - poly1.MassData.Centroid;            
+            Vector2 dLocal1 = c2local - poly1.MassData.Centroid;
 
             // Find edge normal on poly1 that has the largest projection onto d.
             int edge = 0;

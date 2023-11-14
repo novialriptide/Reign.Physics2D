@@ -843,14 +843,14 @@ namespace Reign.Physics2D.Dynamics
         public Vector2 Gravity
         {
             get { return _gravity; }
-            set 
+            set
             {
                 if (IsLocked)
                     throw new InvalidOperationException("The World is locked.");
                 _gravity = value;
             }
         }
-        
+
         /// <summary>
         /// Is the world locked (in the middle of a time step).
         /// </summary>        
@@ -954,7 +954,7 @@ namespace Reign.Physics2D.Dynamics
             var bodyAddedHandler = BodyAdded;
             if (bodyAddedHandler != null)
                 bodyAddedHandler(this, body);
-            
+
             var fixtureAddedHandler = FixtureAdded;
             if (fixtureAddedHandler != null)
                 for (int i = 0; i < body.FixtureList._list.Count; i++)
@@ -1025,7 +1025,7 @@ namespace Reign.Physics2D.Dynamics
             Debug.Assert(!AwakeBodySet.Contains(body));
 #endif
         }
-        
+
         /// <summary>
         /// Create a joint to constrain bodies together. This may cause the connected bodies to cease colliding.
         /// Warning: This method is locked during callbacks.
@@ -1099,7 +1099,7 @@ namespace Reign.Physics2D.Dynamics
 
             // Note: creating a joint doesn't wake the bodies.
         }
-        
+
         /// <summary>
         /// Destroy a joint. This may cause the connected bodies to begin colliding.
         /// Warning: This method is locked during callbacks.
@@ -1341,7 +1341,7 @@ namespace Reign.Physics2D.Dynamics
 #endif
         #endregion // LEGACY_ASYNCADDREMOVE
 
-        
+
         /// <summary>
         /// Take a time step. This performs collision detection, integration,
         /// and consraint solution.
@@ -1602,7 +1602,7 @@ namespace Reign.Physics2D.Dynamics
             if (controller == null)
                 throw new ArgumentNullException("controller");
             if (controller.World != this)
-                    throw new ArgumentException("You are removing a controller that is not in the simulation.", "controller");
+                throw new ArgumentException("You are removing a controller that is not in the simulation.", "controller");
 
             controller.World = null;
             ControllerList._list.Remove(controller);

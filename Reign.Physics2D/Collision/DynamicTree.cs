@@ -847,7 +847,7 @@ namespace Reign.Physics2D.Collision
                     _nodes[iA].Child2 = iAA;
                     _nodes[iN].Child1 = iAB;
                     _nodes[iAB].Parent = iN;
-                    _nodes[iN].AABB.Combine(ref _nodes[iB].AABB, ref  _nodes[iAB].AABB);
+                    _nodes[iN].AABB.Combine(ref _nodes[iB].AABB, ref _nodes[iAB].AABB);
                     _nodes[iA].AABB.Combine(ref _nodes[iN].AABB, ref _nodes[iAA].AABB);
 
                     _nodes[iN].Height = 1 + Math.Max(_nodes[iB].Height, _nodes[iAB].Height);

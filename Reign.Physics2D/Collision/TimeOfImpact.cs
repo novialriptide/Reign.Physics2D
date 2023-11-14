@@ -169,7 +169,7 @@ namespace Reign.Physics2D.Collision
             {
                 case SeparationFunctionType.Points:
                     {
-                        Vector2 axisA =  Complex.Divide(ref _axis, ref xfA.q);
+                        Vector2 axisA = Complex.Divide(ref _axis, ref xfA.q);
                         Vector2 axisB = -Complex.Divide(ref _axis, ref xfB.q);
 
                         indexA = _proxyA.GetSupport(axisA);

@@ -242,7 +242,7 @@ namespace Reign.Physics2D.Common.Decomposition.CDT.Polygon
                 _last = p;
                 _points.Add(p);
             }
-            first = (PolygonPoint) _points[0];
+            first = (PolygonPoint)_points[0];
             _last.Next = first;
             first.Previous = _last;
         }

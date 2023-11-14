@@ -128,7 +128,7 @@ namespace Reign.Physics2D.Common
 
             _writer.WriteEndElement();
         }
-        
+
         private static void SerializeBody(List<Fixture> fixtures, List<Shape> shapes, Body body)
         {
             _writer.WriteStartElement("Body");
@@ -637,9 +637,9 @@ namespace Reign.Physics2D.Common
                     }
                 }
             }
-            
+
             //Read bodies
-            Dictionary<Fixture, Fixture> mapFixtureClones = new Dictionary<Fixture,Fixture>();
+            Dictionary<Fixture, Fixture> mapFixtureClones = new Dictionary<Fixture, Fixture>();
             foreach (XMLFragmentElement bodyElement in root.Elements)
             {
                 if (bodyElement.Name.ToLower() == "bodies")
@@ -1196,7 +1196,7 @@ namespace Reign.Physics2D.Common
         {
             Load(stream);
         }
-        
+
         public XMLFragmentElement RootNode
         {
             get { return _rootNode; }

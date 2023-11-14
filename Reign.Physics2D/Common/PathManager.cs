@@ -135,7 +135,7 @@ namespace Reign.Physics2D.Common
 
             return EvenlyDistributeShapesAlongPath(world, path, shapes, type, copies, userData);
         }
-        
+
         /// <summary>
         /// Moves the given body along the defined path.
         /// </summary>

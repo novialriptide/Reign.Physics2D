@@ -21,7 +21,7 @@ namespace Reign.Physics2D.Content
             {
                 string name = input.ReadString();
                 BodyTemplate body = new BodyTemplate
-                    {
+                {
                     Mass = input.ReadSingle(),
                     BodyType = (BodyType)input.ReadInt32()
                 };
@@ -29,7 +29,7 @@ namespace Reign.Physics2D.Content
                 for (int j = 0; j < fixtureCount; j++)
                 {
                     FixtureTemplate fixture = new FixtureTemplate
-                        {
+                    {
                         Name = input.ReadString(),
                         Restitution = input.ReadSingle(),
                         Friction = input.ReadSingle()
@@ -44,7 +44,8 @@ namespace Reign.Physics2D.Content
                                 CircleShape circle = new CircleShape(radius, density);
                                 circle.Position = input.ReadVector2();
                                 fixture.Shape = circle;
-                            } break;
+                            }
+                            break;
                         case ShapeType.Polygon:
                             {
                                 Vertices verts = new Vertices(Settings.MaxPolygonVertices);
@@ -57,7 +58,8 @@ namespace Reign.Physics2D.Content
                                 PolygonShape poly = new PolygonShape(verts, density);
                                 poly.MassData.Centroid = input.ReadVector2();
                                 fixture.Shape = poly;
-                            } break;
+                            }
+                            break;
                         case ShapeType.Edge:
                             {
                                 EdgeShape edge = new EdgeShape(input.ReadVector2(), input.ReadVector2());
@@ -72,7 +74,8 @@ namespace Reign.Physics2D.Content
                                     edge.Vertex3 = input.ReadVector2();
                                 }
                                 fixture.Shape = edge;
-                            } break;
+                            }
+                            break;
                         case ShapeType.Chain:
                             {
                                 Vertices verts = new Vertices();
@@ -82,7 +85,8 @@ namespace Reign.Physics2D.Content
                                     verts.Add(input.ReadVector2());
                                 }
                                 fixture.Shape = new ChainShape(verts);
-                            } break;
+                            }
+                            break;
                     }
                     body.Fixtures.Add(fixture);
                 }

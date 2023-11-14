@@ -145,7 +145,7 @@ namespace Reign.Physics2D
         /// velocity below this threshold will be treated as inelastic.
         /// </summary>
         public const float VelocityThreshold = 1.0f;
-        
+
         /// <summary>
         /// The maximum linear position correction used when solving constraints. This helps to
         /// prevent overshoot.

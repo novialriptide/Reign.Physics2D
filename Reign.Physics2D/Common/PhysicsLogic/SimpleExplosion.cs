@@ -19,7 +19,7 @@ namespace Reign.Physics2D.Common.PhysicsLogic
     /// </summary>
     public sealed class SimpleExplosion : PhysicsLogic
     {
-        public SimpleExplosion(World world): base(world)
+        public SimpleExplosion(World world) : base(world)
         {
             Power = 1; //linear
         }

@@ -24,6 +24,6 @@ namespace Reign.Physics2D.Common.PhysicsLogic
 
             return base.IsActiveOn(body);
         }
-        
+
     }
 }

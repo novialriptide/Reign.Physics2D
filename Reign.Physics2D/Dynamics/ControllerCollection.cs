@@ -98,7 +98,7 @@ namespace Reign.Physics2D.Dynamics
         }
 
         #endregion IEnumerable
-        
+
 
         public struct ControllerEnumerator : IEnumerator<Controller>
         {

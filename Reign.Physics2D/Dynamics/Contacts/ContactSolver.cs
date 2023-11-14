@@ -392,7 +392,7 @@ namespace Reign.Physics2D.Dynamics.Contacts
 #endif
             }
             else
-            {                
+            {
                 SolveVelocityConstraints(0, _count);
             }
 
@@ -829,7 +829,7 @@ namespace Reign.Physics2D.Dynamics.Contacts
             {
                 contactsOkay = SolvePositionConstraints(0, _count);
             }
-            
+
             return contactsOkay;
         }
 

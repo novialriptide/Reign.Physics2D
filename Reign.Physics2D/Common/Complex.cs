@@ -22,7 +22,7 @@ namespace Reign.Physics2D.Common
         public float Phase
         {
             get { return (float)Math.Atan2(i, R); }
-            set 
+            set
             {
                 if (value == 0)
                 {
@@ -45,7 +45,7 @@ namespace Reign.Physics2D.Common
             R = real;
             i = imaginary;
         }
-                
+
         public static Complex FromAngle(float angle)
         {
             if (angle == 0)
@@ -54,13 +54,13 @@ namespace Reign.Physics2D.Common
             return new Complex(
                 (float)Math.Cos(angle),
                 (float)Math.Sin(angle));
-        }        
+        }
 
         public void Conjugate()
         {
             i = -i;
         }
-                
+
         public void Negate()
         {
             R = -R;
@@ -76,23 +76,23 @@ namespace Reign.Physics2D.Common
         {
             var mag = Magnitude;
             R = R / mag;
-            i = i / mag;            
+            i = i / mag;
         }
 
         public Vector2 ToVector2()
         {
             return new Vector2(R, i);
         }
-        
+
         public static Complex Multiply(ref Complex left, ref Complex right)
         {
-            return new Complex( left.R * right.R  - left.i * right.i,
-                                left.i * right.R  + left.R * right.i);
+            return new Complex(left.R * right.R - left.i * right.i,
+                                left.i * right.R + left.R * right.i);
         }
 
         public static Complex Divide(ref Complex left, ref Complex right)
         {
-            return new Complex( right.R * left.R + right.i * left.i,
+            return new Complex(right.R * left.R + right.i * left.i,
                                 right.R * left.i - right.i * left.R);
         }
         public static void Divide(ref Complex left, ref Complex right, out Complex result)
@@ -133,7 +133,7 @@ namespace Reign.Physics2D.Common
             result = new Vector2(left.X * right.R + left.Y * right.i,
                                  left.Y * right.R - left.X * right.i);
         }
-        
+
         public static Complex Conjugate(ref Complex value)
         {
             return new Complex(value.R, -value.i);
@@ -149,7 +149,7 @@ namespace Reign.Physics2D.Common
             var mag = value.Magnitude;
             return new Complex(value.R / mag, -value.i / mag);
         }
-        
+
         public override string ToString()
         {
             return String.Format("{{R: {0} i: {1} Phase: {2} Magnitude: {3}}}", R, i, Phase, Magnitude);

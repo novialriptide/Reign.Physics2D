@@ -9,14 +9,14 @@ namespace Reign.Physics2D.Dynamics.Contacts
     /// <summary>
     /// Head of a circular doubly linked list.
     /// </summary>
-    public class ContactListHead : Contact , IEnumerable<Contact>
+    public class ContactListHead : Contact, IEnumerable<Contact>
     {
-        internal ContactListHead(): base(null, 0, null, 0)
+        internal ContactListHead() : base(null, 0, null, 0)
         {
             this.Prev = this;
             this.Next = this;
         }
-        
+
         IEnumerator<Contact> IEnumerable<Contact>.GetEnumerator()
         {
             return new ContactEnumerator(this);
@@ -27,7 +27,7 @@ namespace Reign.Physics2D.Dynamics.Contacts
             return new ContactEnumerator(this);
         }
 
-        
+
         #region Nested type: ContactEnumerator
 
         private struct ContactEnumerator : IEnumerator<Contact>
@@ -42,7 +42,7 @@ namespace Reign.Physics2D.Dynamics.Contacts
             public ContactEnumerator(ContactListHead contact)
             {
                 _head = contact;
-                 _current = _head;
+                _current = _head;
             }
 
             public void Reset()

@@ -22,7 +22,7 @@ namespace Reign.Physics2D.Common.PhysicsLogic
     public class BreakableBody
     {
         public enum BreakableBodyState
-        {            	
+        {
             Unbroken,
             ShouldBreak,
             Broken,
@@ -30,12 +30,12 @@ namespace Reign.Physics2D.Common.PhysicsLogic
 
         private float[] _angularVelocitiesCache = new float[8];
         private Vector2[] _velocitiesCache = new Vector2[8];
-        
+
         public List<Fixture> Parts = new List<Fixture>(8);
 
         public World World { get; private set; }
         public Body MainBody { get; private set; }
-        
+
         /// <summary>
         /// The force needed to break the body apart.
         /// Default: 500
@@ -43,7 +43,7 @@ namespace Reign.Physics2D.Common.PhysicsLogic
         public float Strength = 500.0f;
 
         public BreakableBodyState State { get; private set; }
-                
+
         private BreakableBody(World world)
         {
             World = world;
@@ -74,14 +74,14 @@ namespace Reign.Physics2D.Common.PhysicsLogic
                 Parts.Add(fixture);
             }
         }
-        
+
         public BreakableBody(World world, Vertices vertices, float density, Vector2 position = new Vector2(), float rotation = 0) : this(world)
         {
             MainBody = World.CreateBody(position, rotation, BodyType.Dynamic);
-            
+
             //TODO: Implement a Voronoi diagram algorithm to split up the vertices
             List<Vertices> triangles = Triangulate.ConvexPartition(vertices, TriangulationAlgorithm.Earclip);
-         
+
             foreach (Vertices part in triangles)
             {
                 PolygonShape polygonShape = new PolygonShape(part, density);
@@ -89,7 +89,7 @@ namespace Reign.Physics2D.Common.PhysicsLogic
                 Parts.Add(fixture);
             }
         }
-        
+
         private void PostSolve(Contact contact, ContactVelocityConstraint impulse)
         {
             if (State != BreakableBodyState.Broken)
@@ -125,7 +125,7 @@ namespace Reign.Physics2D.Common.PhysicsLogic
                     break;
             }
         }
-        
+
         // Cache velocities to improve movement on breakage.
         private void CacheVelocities()
         {
@@ -163,7 +163,7 @@ namespace Reign.Physics2D.Common.PhysicsLogic
 
                 Body body = World.CreateBody(MainBody.Position, MainBody.Rotation, BodyType.Dynamic);
                 body.Tag = MainBody.Tag;
-                
+
                 Fixture newFixture = body.CreateFixture(shape);
                 newFixture.Tag = fixtureTag;
                 Parts[i] = newFixture;
@@ -173,7 +173,7 @@ namespace Reign.Physics2D.Common.PhysicsLogic
             }
 
             World.Remove(MainBody);
-            
+
             State = BreakableBodyState.Broken;
         }
 

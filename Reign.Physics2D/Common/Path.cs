@@ -235,7 +235,7 @@ namespace Reign.Physics2D.Common
         {
             double sqAmount = amount * amount;
             double cuAmount = sqAmount * amount;
-            
+
             double x;
             double y;
             x = 2.0 * p1.X;
