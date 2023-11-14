@@ -314,9 +314,11 @@ namespace Reign.Physics2D.Dynamics
 
             for (int i = 0; i < ProxyCount; ++i)
             {
-                FixtureProxy proxy = new FixtureProxy();
-                proxy.Fixture = this;
-                proxy.ChildIndex = i;
+                FixtureProxy proxy = new FixtureProxy
+                {
+                    Fixture = this,
+                    ChildIndex = i
+                };
                 Shape.ComputeAABB(out proxy.AABB, ref xf, i);
                 proxy.ProxyId = broadPhase.AddProxy(ref proxy.AABB);
                 broadPhase.SetProxy(proxy.ProxyId, ref proxy);
@@ -374,14 +376,16 @@ namespace Reign.Physics2D.Dynamics
         /// <returns>The cloned fixture.</returns>
         internal Fixture CloneOnto(Body body, Shape shape)
         {
-            Fixture fixture = new Fixture(shape.Clone());
-            fixture.Tag = Tag;
-            fixture.Restitution = Restitution;
-            fixture.Friction = Friction;
-            fixture.IsSensor = IsSensor;
-            fixture._collisionGroup = _collisionGroup;
-            fixture._collisionCategories = _collisionCategories;
-            fixture._collidesWith = _collidesWith;
+            Fixture fixture = new Fixture(shape.Clone())
+            {
+                Tag = Tag,
+                Restitution = Restitution,
+                Friction = Friction,
+                IsSensor = IsSensor,
+                _collisionGroup = _collisionGroup,
+                _collisionCategories = _collisionCategories,
+                _collidesWith = _collidesWith
+            };
 
             body.Add(fixture);
             return fixture;

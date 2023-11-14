@@ -74,8 +74,10 @@ namespace Reign.Physics2D.Dynamics
             if (radius <= 0)
                 throw new ArgumentOutOfRangeException("radius", "Radius must be more than 0 meters");
 
-            CircleShape circleShape = new CircleShape(radius, density);
-            circleShape.Position = offset;
+            CircleShape circleShape = new CircleShape(radius, density)
+            {
+                Position = offset
+            };
             return CreateFixture(circleShape);
         }
 

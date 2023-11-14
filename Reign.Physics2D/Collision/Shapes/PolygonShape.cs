@@ -483,13 +483,15 @@ namespace Reign.Physics2D.Collision.Shapes
 
         public override Shape Clone()
         {
-            PolygonShape clone = new PolygonShape();
-            clone.ShapeType = ShapeType;
-            clone._radius = _radius;
-            clone._density = _density;
-            clone._vertices = new Vertices(_vertices);
-            clone._normals = new Vertices(_normals);
-            clone.MassData = MassData;
+            PolygonShape clone = new PolygonShape
+            {
+                ShapeType = ShapeType,
+                _radius = _radius,
+                _density = _density,
+                _vertices = new Vertices(_vertices),
+                _normals = new Vertices(_normals),
+                MassData = MassData
+            };
             return clone;
         }
     }

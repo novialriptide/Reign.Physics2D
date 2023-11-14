@@ -348,10 +348,12 @@ namespace Reign.Physics2D.Common
             List<Fixture> fixtures = new List<Fixture>();
             List<Shape> shapes = new List<Shape>();
 
-            XmlWriterSettings settings = new XmlWriterSettings();
-            settings.Indent = true;
-            settings.NewLineOnAttributes = false;
-            settings.OmitXmlDeclaration = true;
+            XmlWriterSettings settings = new XmlWriterSettings
+            {
+                Indent = true,
+                NewLineOnAttributes = false,
+                OmitXmlDeclaration = true
+            };
 
             _writer = XmlWriter.Create(stream, settings);
 
@@ -461,8 +463,10 @@ namespace Reign.Physics2D.Common
                         {
                             case ShapeType.Circle:
                                 {
-                                    CircleShape shape = new CircleShape();
-                                    shape._density = density;
+                                    CircleShape shape = new CircleShape
+                                    {
+                                        _density = density
+                                    };
 
                                     foreach (XMLFragmentElement sn in element.Elements)
                                     {
@@ -484,8 +488,10 @@ namespace Reign.Physics2D.Common
                                 break;
                             case ShapeType.Polygon:
                                 {
-                                    PolygonShape shape = new PolygonShape();
-                                    shape._density = density;
+                                    PolygonShape shape = new PolygonShape
+                                    {
+                                        _density = density
+                                    };
 
                                     foreach (XMLFragmentElement sn in element.Elements)
                                     {
@@ -512,8 +518,10 @@ namespace Reign.Physics2D.Common
                                 break;
                             case ShapeType.Edge:
                                 {
-                                    EdgeShape shape = new EdgeShape();
-                                    shape._density = density;
+                                    EdgeShape shape = new EdgeShape
+                                    {
+                                        _density = density
+                                    };
 
                                     foreach (XMLFragmentElement sn in element.Elements)
                                     {
@@ -546,8 +554,10 @@ namespace Reign.Physics2D.Common
                                 break;
                             case ShapeType.Chain:
                                 {
-                                    ChainShape shape = new ChainShape();
-                                    shape._density = density;
+                                    ChainShape shape = new ChainShape
+                                    {
+                                        _density = density
+                                    };
 
                                     foreach (XMLFragmentElement sn in element.Elements)
                                     {
@@ -1100,8 +1110,10 @@ namespace Reign.Physics2D.Common
                     writer.Flush();
                     stream.Position = 0;
                 }
-                XmlReaderSettings settings = new XmlReaderSettings();
-                settings.ConformanceLevel = ConformanceLevel.Fragment;
+                XmlReaderSettings settings = new XmlReaderSettings
+                {
+                    ConformanceLevel = ConformanceLevel.Fragment
+                };
 
                 return serializer.Deserialize(XmlReader.Create(stream, settings));
             }
@@ -1333,8 +1345,10 @@ namespace Reign.Physics2D.Common
             if (token != "<")
                 throw new XMLFragmentException("Expected \"<\", got " + token);
 
-            XMLFragmentElement element = new XMLFragmentElement();
-            element.Name = NextToken();
+            XMLFragmentElement element = new XMLFragmentElement
+            {
+                Name = NextToken()
+            };
 
             while (true)
             {
@@ -1354,8 +1368,10 @@ namespace Reign.Physics2D.Common
                 }
                 else
                 {
-                    XMLFragmentAttribute attribute = new XMLFragmentAttribute();
-                    attribute.Name = token;
+                    XMLFragmentAttribute attribute = new XMLFragmentAttribute
+                    {
+                        Name = token
+                    };
                     if ((token = NextToken()) != "=")
                         throw new XMLFragmentException("Expected \"=\", got " + token);
                     attribute.Value = NextToken();

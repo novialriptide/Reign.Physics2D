@@ -299,9 +299,11 @@ namespace Reign.Physics2D.Collision
             if (Settings.EnableDiagnostics) //FPE: We only gather diagnostics when enabled
                 ++TOICalls;
 
-            output = new TOIOutput();
-            output.State = TOIOutputState.Unknown;
-            output.T = input.TMax;
+            output = new TOIOutput
+            {
+                State = TOIOutputState.Unknown,
+                T = input.TMax
+            };
 
             Sweep sweepA = input.SweepA;
             Sweep sweepB = input.SweepB;
@@ -323,10 +325,12 @@ namespace Reign.Physics2D.Collision
             int iter = 0;
 
             // Prepare input for distance query.
-            DistanceInput distanceInput = new DistanceInput();
-            distanceInput.ProxyA = input.ProxyA;
-            distanceInput.ProxyB = input.ProxyB;
-            distanceInput.UseRadii = false;
+            DistanceInput distanceInput = new DistanceInput
+            {
+                ProxyA = input.ProxyA,
+                ProxyB = input.ProxyB,
+                UseRadii = false
+            };
 
             // The outer loop progressively attempts to compute new separating axes.
             // This loop terminates when an axis is repeated (no progress is made).

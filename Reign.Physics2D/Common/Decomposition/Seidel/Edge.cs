@@ -36,9 +36,11 @@ namespace Reign.Physics2D.Common.Decomposition.Seidel
             B = p.Y - (p.X * Slope);
             Above = null;
             Below = null;
-            MPoints = new HashSet<Point>();
-            MPoints.Add(p);
-            MPoints.Add(q);
+            MPoints = new HashSet<Point>
+            {
+                p,
+                q
+            };
         }
 
         public bool IsAbove(Point point)

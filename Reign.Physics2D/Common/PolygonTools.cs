@@ -22,11 +22,13 @@ namespace Reign.Physics2D.Common
         /// <param name="hy">the half-height.</param>
         public static Vertices CreateRectangle(float hx, float hy)
         {
-            Vertices vertices = new Vertices(4);
-            vertices.Add(new Vector2(-hx, -hy));
-            vertices.Add(new Vector2(hx, -hy));
-            vertices.Add(new Vector2(hx, hy));
-            vertices.Add(new Vector2(-hx, hy));
+            Vertices vertices = new Vertices(4)
+            {
+                new Vector2(-hx, -hy),
+                new Vector2(hx, -hy),
+                new Vector2(hx, hy),
+                new Vector2(-hx, hy)
+            };
 
             return vertices;
         }
@@ -128,9 +130,11 @@ namespace Reign.Physics2D.Common
         /// <param name="end">The second point.</param>
         public static Vertices CreateLine(Vector2 start, Vector2 end)
         {
-            Vertices vertices = new Vertices(2);
-            vertices.Add(start);
-            vertices.Add(end);
+            Vertices vertices = new Vertices(2)
+            {
+                start,
+                end
+            };
 
             return vertices;
         }

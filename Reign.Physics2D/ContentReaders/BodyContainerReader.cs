@@ -41,8 +41,10 @@ namespace Reign.Physics2D.Content
                             {
                                 float density = input.ReadSingle();
                                 float radius = input.ReadSingle();
-                                CircleShape circle = new CircleShape(radius, density);
-                                circle.Position = input.ReadVector2();
+                                CircleShape circle = new CircleShape(radius, density)
+                                {
+                                    Position = input.ReadVector2()
+                                };
                                 fixture.Shape = circle;
                             }
                             break;
@@ -62,8 +64,10 @@ namespace Reign.Physics2D.Content
                             break;
                         case ShapeType.Edge:
                             {
-                                EdgeShape edge = new EdgeShape(input.ReadVector2(), input.ReadVector2());
-                                edge.HasVertex0 = input.ReadBoolean();
+                                EdgeShape edge = new EdgeShape(input.ReadVector2(), input.ReadVector2())
+                                {
+                                    HasVertex0 = input.ReadBoolean()
+                                };
                                 if (edge.HasVertex0)
                                 {
                                     edge.Vertex0 = input.ReadVector2();

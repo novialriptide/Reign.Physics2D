@@ -331,11 +331,13 @@ namespace Reign.Physics2D.Collision
         {
             get
             {
-                Vertices vertices = new Vertices(4);
-                vertices.Add(UpperBound);
-                vertices.Add(new Vector2(UpperBound.X, LowerBound.Y));
-                vertices.Add(LowerBound);
-                vertices.Add(new Vector2(LowerBound.X, UpperBound.Y));
+                Vertices vertices = new Vertices(4)
+                {
+                    UpperBound,
+                    new Vector2(UpperBound.X, LowerBound.Y),
+                    LowerBound,
+                    new Vector2(LowerBound.X, UpperBound.Y)
+                };
                 return vertices;
             }
         }
@@ -599,12 +601,14 @@ namespace Reign.Physics2D.Collision
         /// <returns></returns>
         public static bool TestOverlap(Shape shapeA, int indexA, Shape shapeB, int indexB, ref Transform xfA, ref Transform xfB)
         {
-            DistanceInput _input = new DistanceInput();
-            _input.ProxyA = new DistanceProxy(shapeA, indexA);
-            _input.ProxyB = new DistanceProxy(shapeB, indexB);
-            _input.TransformA = xfA;
-            _input.TransformB = xfB;
-            _input.UseRadii = true;
+            DistanceInput _input = new DistanceInput
+            {
+                ProxyA = new DistanceProxy(shapeA, indexA),
+                ProxyB = new DistanceProxy(shapeB, indexB),
+                TransformA = xfA,
+                TransformB = xfB,
+                UseRadii = true
+            };
 
             SimplexCache cache;
             DistanceOutput output;

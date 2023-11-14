@@ -253,16 +253,18 @@ namespace Reign.Physics2D.Collision.Shapes
 
         public override Shape Clone()
         {
-            ChainShape clone = new ChainShape();
-            clone.ShapeType = ShapeType;
-            clone._density = _density;
-            clone._radius = _radius;
-            clone.PrevVertex = _prevVertex;
-            clone.NextVertex = _nextVertex;
-            clone._hasNextVertex = _hasNextVertex;
-            clone._hasPrevVertex = _hasPrevVertex;
-            clone.Vertices = new Vertices(Vertices);
-            clone.MassData = MassData;
+            ChainShape clone = new ChainShape
+            {
+                ShapeType = ShapeType,
+                _density = _density,
+                _radius = _radius,
+                PrevVertex = _prevVertex,
+                NextVertex = _nextVertex,
+                _hasNextVertex = _hasNextVertex,
+                _hasPrevVertex = _hasPrevVertex,
+                Vertices = new Vertices(Vertices),
+                MassData = MassData
+            };
             return clone;
         }
     }

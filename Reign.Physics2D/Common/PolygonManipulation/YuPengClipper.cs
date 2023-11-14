@@ -322,9 +322,11 @@ namespace Reign.Physics2D.Common.PolygonManipulation
 
             while (simplicies.Count > 0)
             {
-                Vertices output = new Vertices();
-                output.Add(simplicies[0].EdgeStart);
-                output.Add(simplicies[0].EdgeEnd);
+                Vertices output = new Vertices
+                {
+                    simplicies[0].EdgeStart,
+                    simplicies[0].EdgeEnd
+                };
                 simplicies.RemoveAt(0);
                 bool closed = false;
                 int index = 0;
@@ -439,10 +441,12 @@ namespace Reign.Physics2D.Common.PolygonManipulation
         /// the simplex and True otherwise.</returns>
         private static bool PointInSimplex(Vector2 point, Edge edge)
         {
-            Vertices polygon = new Vertices();
-            polygon.Add(Vector2.Zero);
-            polygon.Add(edge.EdgeStart);
-            polygon.Add(edge.EdgeEnd);
+            Vertices polygon = new Vertices
+            {
+                Vector2.Zero,
+                edge.EdgeStart,
+                edge.EdgeEnd
+            };
             return (polygon.PointInPolygon(ref point) == 1);
         }
 

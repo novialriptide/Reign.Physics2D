@@ -200,13 +200,15 @@ namespace Reign.Physics2D.Collision.Shapes
 
         public override Shape Clone()
         {
-            CircleShape clone = new CircleShape();
-            clone.ShapeType = ShapeType;
-            clone._radius = Radius;
-            clone._2radius = _2radius; //FPE note: We also copy the cache
-            clone._density = _density;
-            clone._position = _position;
-            clone.MassData = MassData;
+            CircleShape clone = new CircleShape
+            {
+                ShapeType = ShapeType,
+                _radius = Radius,
+                _2radius = _2radius, //FPE note: We also copy the cache
+                _density = _density,
+                _position = _position,
+                MassData = MassData
+            };
             return clone;
         }
     }

@@ -1371,11 +1371,13 @@ namespace Reign.Physics2D.Dynamics
         /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Step(float dt)
         {
-            SolverIterations iterations = new SolverIterations();
-            iterations.PositionIterations = Settings.PositionIterations;
-            iterations.VelocityIterations = Settings.VelocityIterations;
-            iterations.TOIPositionIterations = Settings.TOIPositionIterations;
-            iterations.TOIVelocityIterations = Settings.TOIVelocityIterations;
+            SolverIterations iterations = new SolverIterations
+            {
+                PositionIterations = Settings.PositionIterations,
+                VelocityIterations = Settings.VelocityIterations,
+                TOIPositionIterations = Settings.TOIPositionIterations,
+                TOIVelocityIterations = Settings.TOIVelocityIterations
+            };
             Step(dt, ref iterations);
         }
 
@@ -1539,10 +1541,12 @@ namespace Reign.Physics2D.Dynamics
         /// <param name="point2">The ray ending point.</param>
         public void RayCast(RayCastReportFixtureDelegate callback, Vector2 point1, Vector2 point2)
         {
-            RayCastInput input = new RayCastInput();
-            input.MaxFraction = 1.0f;
-            input.Point1 = point1;
-            input.Point2 = point2;
+            RayCastInput input = new RayCastInput
+            {
+                MaxFraction = 1.0f,
+                Point1 = point1,
+                Point2 = point2
+            };
 
             _rayCastDelegateTmp = callback;
             ContactManager.BroadPhase.RayCast(_rayCastCallbackCache, ref input);

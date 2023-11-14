@@ -21,10 +21,12 @@ namespace Reign.Physics2D.Dynamics
     {
         public virtual Body CreateBody(Vector2 position = new Vector2(), float rotation = 0, BodyType bodyType = BodyType.Static)
         {
-            Body body = new Body();
-            body.Position = position;
-            body.Rotation = rotation;
-            body.BodyType = bodyType;
+            Body body = new Body
+            {
+                Position = position,
+                Rotation = rotation,
+                BodyType = bodyType
+            };
 
 #if LEGACY_ASYNCADDREMOVE
             AddAsync(body);
@@ -139,8 +141,10 @@ namespace Reign.Physics2D.Dynamics
             //Create the middle rectangle
             Vertices rectangle = PolygonTools.CreateRectangle(endRadius, height / 2);
 
-            List<Vertices> list = new List<Vertices>();
-            list.Add(rectangle);
+            List<Vertices> list = new List<Vertices>
+            {
+                rectangle
+            };
 
             Body body = CreateCompoundPolygon(list, density, position, rotation, bodyType);
             body.CreateCircle(endRadius, density, new Vector2(0, height / 2));

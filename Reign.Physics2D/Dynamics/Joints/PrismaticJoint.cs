@@ -584,9 +584,11 @@ namespace Reign.Physics2D.Dynamics.Joints
                 wB += iB * LB;
             }
 
-            Vector2 Cdot1 = new Vector2();
-            Cdot1.X = Vector2.Dot(_perp, vB - vA) + _s2 * wB - _s1 * wA;
-            Cdot1.Y = wB - wA;
+            Vector2 Cdot1 = new Vector2
+            {
+                X = Vector2.Dot(_perp, vB - vA) + _s2 * wB - _s1 * wA,
+                Y = wB - wA
+            };
 
             if (_enableLimit && _limitState != LimitState.Inactive)
             {
@@ -677,9 +679,11 @@ namespace Reign.Physics2D.Dynamics.Joints
             float s2 = MathUtils.Cross(ref rB, ref perp);
 
             Vector3 impulse;
-            Vector2 C1 = new Vector2();
-            C1.X = Vector2.Dot(perp, d);
-            C1.Y = aB - aA - ReferenceAngle;
+            Vector2 C1 = new Vector2
+            {
+                X = Vector2.Dot(perp, d),
+                Y = aB - aA - ReferenceAngle
+            };
 
             float linearError = Math.Abs(C1.X);
             float angularError = Math.Abs(C1.Y);
@@ -726,15 +730,19 @@ namespace Reign.Physics2D.Dynamics.Joints
                 float k23 = iA * a1 + iB * a2;
                 float k33 = mA + mB + iA * a1 * a1 + iB * a2 * a2;
 
-                Mat33 K = new Mat33();
-                K.ex = new Vector3(k11, k12, k13);
-                K.ey = new Vector3(k12, k22, k23);
-                K.ez = new Vector3(k13, k23, k33);
+                Mat33 K = new Mat33
+                {
+                    ex = new Vector3(k11, k12, k13),
+                    ey = new Vector3(k12, k22, k23),
+                    ez = new Vector3(k13, k23, k33)
+                };
 
-                Vector3 C = new Vector3();
-                C.X = C1.X;
-                C.Y = C1.Y;
-                C.Z = C2;
+                Vector3 C = new Vector3
+                {
+                    X = C1.X,
+                    Y = C1.Y,
+                    Z = C2
+                };
 
                 impulse = K.Solve33(-C);
             }
@@ -748,15 +756,19 @@ namespace Reign.Physics2D.Dynamics.Joints
                     k22 = 1.0f;
                 }
 
-                Mat22 K = new Mat22();
-                K.ex = new Vector2(k11, k12);
-                K.ey = new Vector2(k12, k22);
+                Mat22 K = new Mat22
+                {
+                    ex = new Vector2(k11, k12),
+                    ey = new Vector2(k12, k22)
+                };
 
                 Vector2 impulse1 = K.Solve(-C1);
-                impulse = new Vector3();
-                impulse.X = impulse1.X;
-                impulse.Y = impulse1.Y;
-                impulse.Z = 0.0f;
+                impulse = new Vector3
+                {
+                    X = impulse1.X,
+                    Y = impulse1.Y,
+                    Z = 0.0f
+                };
             }
 
             Vector2 P = impulse.X * perp + impulse.Z * axis;

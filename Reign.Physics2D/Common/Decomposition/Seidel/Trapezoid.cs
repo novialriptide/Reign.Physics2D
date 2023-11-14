@@ -90,11 +90,13 @@ namespace Reign.Physics2D.Common.Decomposition.Seidel
 
         public List<Point> GetVertices()
         {
-            List<Point> verts = new List<Point>(4);
-            verts.Add(LineIntersect(Top, LeftPoint.X));
-            verts.Add(LineIntersect(Bottom, LeftPoint.X));
-            verts.Add(LineIntersect(Bottom, RightPoint.X));
-            verts.Add(LineIntersect(Top, RightPoint.X));
+            List<Point> verts = new List<Point>(4)
+            {
+                LineIntersect(Top, LeftPoint.X),
+                LineIntersect(Bottom, LeftPoint.X),
+                LineIntersect(Bottom, RightPoint.X),
+                LineIntersect(Top, RightPoint.X)
+            };
             return verts;
         }
 

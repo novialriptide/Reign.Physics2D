@@ -83,10 +83,12 @@ namespace Reign.Physics2D.Common.Decomposition
                     int s, t;
 
                     // Output Triangle
-                    Vertices triangle = new Vertices(3);
-                    triangle.Add(_tmpA);
-                    triangle.Add(_tmpB);
-                    triangle.Add(_tmpC);
+                    Vertices triangle = new Vertices(3)
+                    {
+                        _tmpA,
+                        _tmpB,
+                        _tmpC
+                    };
                     result.Add(triangle);
 
                     // Remove v from remaining polygon 

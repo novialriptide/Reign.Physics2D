@@ -129,10 +129,14 @@ namespace Reign.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep
             DelaunayTriangle iTriangle = new DelaunayTriangle(Points[0], Tail, Head);
             Triangles.Add(iTriangle);
 
-            head = new AdvancingFrontNode(iTriangle.Points[1]);
-            head.Triangle = iTriangle;
-            middle = new AdvancingFrontNode(iTriangle.Points[0]);
-            middle.Triangle = iTriangle;
+            head = new AdvancingFrontNode(iTriangle.Points[1])
+            {
+                Triangle = iTriangle
+            };
+            middle = new AdvancingFrontNode(iTriangle.Points[0])
+            {
+                Triangle = iTriangle
+            };
             tail = new AdvancingFrontNode(iTriangle.Points[2]);
 
             aFront = new AdvancingFront(head, tail);

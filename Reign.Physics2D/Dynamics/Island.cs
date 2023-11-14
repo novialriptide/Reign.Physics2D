@@ -158,11 +158,13 @@ namespace Reign.Physics2D.Dynamics
             }
 
             // Solver data
-            SolverData solverData = new SolverData();
-            solverData.step = step;
-            solverData.positions = _positions;
-            solverData.velocities = _velocities;
-            solverData.locks = _locks;
+            SolverData solverData = new SolverData
+            {
+                step = step,
+                positions = _positions,
+                velocities = _velocities,
+                locks = _locks
+            };
 
             _contactSolver.Reset(ref step, ContactCount, _contacts, _positions, _velocities,
                 _locks, _contactManager.VelocityConstraintsMultithreadThreshold, _contactManager.PositionConstraintsMultithreadThreshold);

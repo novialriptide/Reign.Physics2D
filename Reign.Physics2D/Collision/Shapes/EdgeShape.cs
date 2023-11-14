@@ -271,17 +271,19 @@ namespace Reign.Physics2D.Collision.Shapes
 
         public override Shape Clone()
         {
-            EdgeShape clone = new EdgeShape();
-            clone.ShapeType = ShapeType;
-            clone._radius = _radius;
-            clone._density = _density;
-            clone.HasVertex0 = HasVertex0;
-            clone.HasVertex3 = HasVertex3;
-            clone.Vertex0 = Vertex0;
-            clone._vertex1 = _vertex1;
-            clone._vertex2 = _vertex2;
-            clone.Vertex3 = Vertex3;
-            clone.MassData = MassData;
+            EdgeShape clone = new EdgeShape
+            {
+                ShapeType = ShapeType,
+                _radius = _radius,
+                _density = _density,
+                HasVertex0 = HasVertex0,
+                HasVertex3 = HasVertex3,
+                Vertex0 = Vertex0,
+                _vertex1 = _vertex1,
+                _vertex2 = _vertex2,
+                Vertex3 = Vertex3,
+                MassData = MassData
+            };
             return clone;
         }
     }

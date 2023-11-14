@@ -130,8 +130,10 @@ namespace Reign.Physics2D.Common
         /// <returns></returns>
         public static List<Body> EvenlyDistributeShapesAlongPath(World world, Path path, Shape shape, BodyType type, int copies, object userData = null)
         {
-            List<Shape> shapes = new List<Shape>(1);
-            shapes.Add(shape);
+            List<Shape> shapes = new List<Shape>(1)
+            {
+                shape
+            };
 
             return EvenlyDistributeShapesAlongPath(world, path, shapes, type, copies, userData);
         }
@@ -168,16 +170,20 @@ namespace Reign.Physics2D.Common
 
             for (int i = 1; i < bodies.Count; i++)
             {
-                RevoluteJoint joint = new RevoluteJoint(bodies[i], bodies[i - 1], localAnchorA, localAnchorB);
-                joint.CollideConnected = collideConnected;
+                RevoluteJoint joint = new RevoluteJoint(bodies[i], bodies[i - 1], localAnchorA, localAnchorB)
+                {
+                    CollideConnected = collideConnected
+                };
                 world.Add(joint);
                 joints.Add(joint);
             }
 
             if (connectFirstAndLast)
             {
-                RevoluteJoint lastjoint = new RevoluteJoint(bodies[0], bodies[bodies.Count - 1], localAnchorA, localAnchorB);
-                lastjoint.CollideConnected = collideConnected;
+                RevoluteJoint lastjoint = new RevoluteJoint(bodies[0], bodies[bodies.Count - 1], localAnchorA, localAnchorB)
+                {
+                    CollideConnected = collideConnected
+                };
                 world.Add(lastjoint);
                 joints.Add(lastjoint);
             }

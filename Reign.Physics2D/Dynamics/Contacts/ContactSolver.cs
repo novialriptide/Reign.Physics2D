@@ -594,9 +594,11 @@ namespace Reign.Physics2D.Dynamics.Contacts
                     float vn1 = Vector2.Dot(dv1, normal);
                     float vn2 = Vector2.Dot(dv2, normal);
 
-                    Vector2 b = new Vector2();
-                    b.X = vn1 - cp1.velocityBias;
-                    b.Y = vn2 - cp2.velocityBias;
+                    Vector2 b = new Vector2
+                    {
+                        X = vn1 - cp1.velocityBias,
+                        Y = vn2 - cp2.velocityBias
+                    };
 
                     // Compute b'
                     b -= MathUtils.Mul(ref vc.K, ref a);

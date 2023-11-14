@@ -25,8 +25,10 @@ namespace Reign.Physics2D.Common.Decomposition.Seidel
 
         public List<Trapezoid> FollowEdge(Edge edge)
         {
-            List<Trapezoid> trapezoids = new List<Trapezoid>();
-            trapezoids.Add(Locate(edge));
+            List<Trapezoid> trapezoids = new List<Trapezoid>
+            {
+                Locate(edge)
+            };
             int j = 0;
 
             while (edge.Q.X > trapezoids[j].RightPoint.X)
