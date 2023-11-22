@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
-
-using System;
+﻿using System;
 #if XNAAPI
 using Complex = Reign.Physics2D.Common.Complex;
 using Vector2 = Microsoft.Xna.Framework.Vector2;

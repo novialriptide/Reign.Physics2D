@@ -3,8 +3,6 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
-using System;
-using System.Collections.Generic;
 using Reign.Physics2D.Collision.Shapes;
 using Reign.Physics2D.Common.Decomposition;
 using Reign.Physics2D.Dynamics;

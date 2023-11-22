@@ -3,10 +3,7 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using Reign.Physics2D.Common.TextureTools;
 #if XNAAPI
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 #endif

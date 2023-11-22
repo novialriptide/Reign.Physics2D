@@ -1,8 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
-
-using System;
-
-namespace Reign.Physics2D.Common
+﻿namespace Reign.Physics2D.Common
 {
     public struct Vector3 : IEquatable<Vector3>
     {

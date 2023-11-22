@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
-
-using System;
+﻿using System;
 
 namespace Reign.Physics2D.Common
 {

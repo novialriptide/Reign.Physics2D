@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
-
-/* Original source Farseer Physics Engine:
+﻿/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -11,6 +9,7 @@ using Reign.Physics2D.Collision.Shapes;
 using Reign.Physics2D.Common;
 using Reign.Physics2D.Common.Decomposition;
 using Reign.Physics2D.Dynamics.Joints;
+using Path = Reign.Physics2D.Common.Path;
 #if XNAAPI
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 #endif

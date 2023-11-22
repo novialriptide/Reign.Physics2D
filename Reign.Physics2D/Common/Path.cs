@@ -3,8 +3,6 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
-using System;
-using System.Collections.Generic;
 using System.Text;
 #if XNAAPI
 using Complex = Reign.Physics2D.Common.Complex;

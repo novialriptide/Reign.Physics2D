@@ -25,8 +25,6 @@
 * 3. This notice may not be removed or altered from any source distribution. 
 */
 
-using System;
-
 namespace Reign.Physics2D.Common
 {
     public struct FixedArray2<T>

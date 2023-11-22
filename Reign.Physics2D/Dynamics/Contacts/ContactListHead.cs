@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 
