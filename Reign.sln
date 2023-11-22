@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reign.Physics2d", "Reign.Physics2D\Reign.Physics2d.csproj", "{763B416F-6D8E-4885-BC64-3B47F393468A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reign.Physics2D", "Reign.Physics2D\Reign.Physics2D.csproj", "{763B416F-6D8E-4885-BC64-3B47F393468A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reign.Physics2D.Tests", "Reign.Physics2D.Tests\Reign.Physics2D.Tests.csproj", "{B0162A68-F3C0-40E2-B999-97D43F03B896}"
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
@@ -30,5 +32,17 @@ Global
 		{763B416F-6D8E-4885-BC64-3B47F393468A}.Release|x64.Build.0 = Release|Any CPU
 		{763B416F-6D8E-4885-BC64-3B47F393468A}.Release|x86.ActiveCfg = Release|Any CPU
 		{763B416F-6D8E-4885-BC64-3B47F393468A}.Release|x86.Build.0 = Release|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Debug|x64.Build.0 = Debug|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Debug|x86.Build.0 = Debug|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Release|x64.ActiveCfg = Release|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Release|x64.Build.0 = Release|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Release|x86.ActiveCfg = Release|Any CPU
+		{B0162A68-F3C0-40E2-B999-97D43F03B896}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
