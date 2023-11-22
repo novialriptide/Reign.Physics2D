@@ -19,3 +19,8 @@ Just another fork of [Aether.Physics2D](https://github.com/tainicom/Aether.Physi
  - Controllers (gravity, force generators)
  - Tools to decompose concave polygons, find convex hulls and boolean operations
  - Factories to simplify the creation of bodies
+
+## Credit
+
+ - [Ian Qvis](https://github.com/Genbox), creating [Farseer Physics](https://github.com/Genbox/VelcroPhysics)
+ - [Kastellanos Nikolaos](https://github.com/nkast), contributions to [Aether.Physics2D](https://github.com/tainicom/Aether.Physics2D)
