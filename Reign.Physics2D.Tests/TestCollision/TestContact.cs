@@ -67,7 +67,7 @@ namespace Reign.Physics2D.Tests
 
             dummy2.Body.Position = new Vector2(50, 50);
             world.Step(1f);
-            
+
             Assert.AreEqual(1, dummy1.OnCollisionCallCount);
             Assert.AreEqual(1, dummy1.OnSeparationCallCount);
             Assert.AreEqual(1, dummy2.OnCollisionCallCount);
