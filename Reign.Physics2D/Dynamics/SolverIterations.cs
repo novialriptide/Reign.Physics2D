@@ -1,6 +1,4 @@
-﻿// Copyright (c) 2018 Kastellanos Nikolaos
-
-namespace Reign.Physics2D.Dynamics
+﻿namespace Reign.Physics2D.Dynamics
 {
     public struct SolverIterations
     {

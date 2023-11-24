@@ -1,8 +1,4 @@
-﻿// Copyright (c) 2021 Kastellanos Nikolaos
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 
 namespace Reign.Physics2D.Dynamics
 {
