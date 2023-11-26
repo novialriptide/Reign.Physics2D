@@ -14,7 +14,7 @@ namespace Reign.Physics2D.Tests
             var body = new Body();
 
             Assert.AreEqual(0, body.FixtureList.Count);
-            
+
             Vertices vertices = PolygonTools.CreateRectangle(5, 5, new Vector2(5, 5), 0);
             var fixture = new Fixture(new PolygonShape(vertices, 1.0f));
             body.Add(fixture);
